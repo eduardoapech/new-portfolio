@@ -59,6 +59,9 @@ src/
 	data/             # Conteúdo/i18n e dados (skills/projetos/links)
 	hooks/            # IntersectionObserver para animação reveal
 	lib/              # utilitários (scroll, i18n)
+
+	https://eduardoapech.github.io/new-portfolio/
 index.html          # Entrada do Vite/React
 ```
+
 
