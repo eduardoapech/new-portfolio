@@ -57,7 +57,7 @@ export const translations = {
       "Site de imobiliária com páginas e navegação moderna.<br><strong>Stacks</strong>: Next.js, React, JavaScript, CSS.<br><strong>Site:</strong> <a href='https://site-imobiliaria-lyart.vercel.app/' target='_blank' rel='noreferrer'>Clique aqui</a>",
 
     'proj-restaurante':
-      "Site de restaurante com páginas e navegação moderna.<br><strong>Stacks</strong>: HTML, CSS, JavaScript.<br><strong>Site:</strong> <a href='https://restaurante-swart-omega.vercel.app/' target='_blank' rel='noreferrer'>Clique aqui</a>",
+      "Site de restaurante com páginas e navegação moderna.<br><strong>Stacks</strong>: FLUTTER WEB, HTML, CSS, JavaScript.<br><strong>Site:</strong> <a href='https://restaurante-swart-omega.vercel.app/' target='_blank' rel='noreferrer'>Clique aqui</a>",
 
     'view-project': 'VER PROJETO →',
     'view-details': 'VER DETALHES →',
@@ -149,7 +149,7 @@ export const projects = [
   {
     id: 'proj-restaurante',
     title: 'Restaurante',
-    tech: ['HTML', 'CSS', 'JavaScript'],
+    tech: ['Flutter Web','HTML', 'CSS', 'JavaScript'],
     img: '/assets/image/projetos/restaurante/restaurante.png',
     type: 'modal',
     link: 'https://restaurante-swart-omega.vercel.app/',
