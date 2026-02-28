@@ -1,57 +1,64 @@
-# 🚀 Portfólio Profissional | Jean Torres
+# 🚀 Portfólio Profissional | Eduardo Augusto Pech
 
-![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen?style=for-the-badge)
+Portfólio refatorado para **React (Vite)**, mantendo o layout e recursos principais (i18n PT/EN, modal de projetos com galeria, zoom no mobile e botão de voltar ao topo).
 
-Bem-vindo ao repositório do meu portfólio. Este projeto foi desenvolvido para apresentar minhas competências técnicas e minha trajetória como desenvolvedor através de uma interface moderna, rápida e totalmente responsiva.
+## 👤 Sobre
 
----
+- **Nome:** Eduardo Augusto Pech
+- **Cargo:** Software Developer
+- **Stacks principais:** React | Flutter | C# | Java | React Native | Node
 
-## 🔗 Link para Acesso
+## 🔗 Contato
 
-**Acesse o portfólio online:** [Clique Aqui](https://jeantorres1697.github.io/portifolio)
+- **Telefone/WhatsApp:** +55 9 9186-4238
+- **Email:** eduardo.augusto.pech97@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/eduardoapech
+- **GitHub:** https://github.com/eduardoapech
 
----
+## 🛠️ Tecnologias
 
-## 🛠️ Tecnologias Utilizadas
+- React 18 + Vite 5
+- CSS (reaproveitado em `public/assets/css/style.css`)
+- Web3Forms (envio do formulário de contato)
 
-- **HTML5 & CSS3**: Estrutura semântica e estilização avançada com variáveis CSS para fácil manutenção.
-- **JavaScript (ES6+)**: Lógica dinâmica para modais, internacionalização (i18n) e manipulação do DOM.
-- **Web3Forms**: Integração de formulário de contato segura para ambientes estáticos (GitHub Pages).
-- **Font Awesome**: Ícones vetoriais para melhor acessibilidade visual.
+## ▶️ Como rodar
 
----
+```bash
+npm install
+npm run dev
+```
 
-## 📂 Galeria de Projetos
+## ✉️ Formulário de contato (Web3Forms)
 
-O portfólio destaca uma série de aplicações que demonstram diferentes habilidades:
+Para as mensagens chegarem no seu email, você precisa configurar sua própria key do Web3Forms:
 
-- **ShoutWork**: Plataforma B2B para conexão entre prestadores de serviços e clientes finais, com sistema de anúncios e perfis.
-- **Help Desk**: Sistema robusto de gestão de chamados com dashboards executivos e controle de prioridades.
-- **Votação Eleitoral**: Simulador dinâmico focado em lógica de objetos e estados em JavaScript.
-- **Valthan**: Interface institucional para indústria metalúrgica focada em conversão.
-- **One Piece & WWW**: Projetos de design visual imersivo e tributos históricos à web.
+1. Crie/acesse sua conta em https://web3forms.com/
+2. Gere uma `access_key` e configure o email de recebimento
+3. Crie um arquivo `.env` na raiz (use `.env.example` como base) e preencha:
 
----
+```bash
+VITE_WEB3FORMS_ACCESS_KEY=SUACHAVEAQUI
+```
 
-## ✨ Diferenciais Técnicos
+Depois reinicie o `npm run dev`.
 
-### 📱 Experiência Mobile (UX)
+Build de produção:
 
-Implementei um sistema de **Zoom Inteligente** (Lightbox customizado) especificamente para dispositivos móveis. Isso permite que usuários vejam detalhes importantes de sistemas complexos (como formulários de cadastro ou dashboards) diretamente no celular com clareza total.
+```bash
+npm run build
+npm run preview
+```
 
-### 🌍 Internacionalização
-
-O site é bilingue (Português/Inglês). Toda a troca de conteúdo é feita via JavaScript, mantendo a performance sem necessidade de recarregar a página.
-
----
-
-## 🏗️ Estrutura do Projeto
+## 📁 Estrutura
 
 ```text
-├── assets/
-│   ├── css/        #style.css - Estilização modular e responsiva
-│   ├── js/         #script.js - Lógica de tradução e interatividade
-│   └── image/      #Organização por projetos (ShoutWork, HelpDesk, etc.)
-└── index.html      #Ponto de entrada do portfólio
+public/
+	assets/           # CSS/imagens reaproveitados
+src/
+	components/       # Seções e UI (Header, Hero, Modal, etc.)
+	data/             # Conteúdo/i18n e dados (skills/projetos/links)
+	hooks/            # IntersectionObserver para animação reveal
+	lib/              # utilitários (scroll, i18n)
+index.html          # Entrada do Vite/React
 ```
 

@@ -1,166 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eduardo Augusto Pech | Software Developer</title>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jean Dev</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
-        rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/image/favicon_io/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/image/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="assets/image/favicon_io/site.webmanifest">
-</head>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3F03L6L0T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="/assets/image/favicon_io/site.webmanifest" />
 
-  gtag('config', 'G-Y3F03L6L0T');
-</script>
+    <!-- Google Analytics removido (era do template anterior) -->
+  </head>
 
-<body>
-    <div id="custom-cursor"></div>
-
-    <header id="header">
-        <div class="nav-floating">
-            <a href="#hero" class="logo">JEAN.DEV</a>
-
-            <div class="nav-links">
-            </div>
-
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <button id="lang-switch">EN</button>
-
-                <button class="hamburger" id="hamburger" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-
-                <a href="#contato" class="nav-cta" data-i18n="nav-hire">Contratar</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <span class="badge-hero reveal" data-i18n="hero-badge">Front-End Developer</span>
-                    <h1 class="hero-title reveal" data-i18n="hero-title">Design <span
-                            class="highlight">minimalista</span>, código robusto.</h1>
-                    <p class="hero-desc reveal" data-i18n="hero-desc">Transformo visões em realidade digital, desenvolvendo interfaces de alto padrão que equilibram estética minimalista com uma performance impecável. Meu foco é criar experiências fluidas e intuitivas que não apenas impressionam visualmente, mas impulsionam o sucesso do seu projeto.</p>
-                    <div class="hero-cta reveal">
-                        <button class="btn btn-primary" onclick="scrollToSection('projetos')" data-i18n="btn-work">Meus
-                            Trabalhos</button>
-                        <button class="btn btn-secondary" onclick="scrollToSection('contato')"
-                            data-i18n="btn-talk">Vamos conversar?</button>
-                    </div>
-                </div>
-                <div class="hero-image-box reveal">
-                    <img src="assets/image/perfil-Jean.jpg" alt="Jean" class="hero-profile-img">
-                </div>
-            </div>
-        </section>
-
-        <section id="habilidades" class="container section-padding">
-            <div class="section-header reveal">
-                <p class="subtitle" data-i18n="skills-sub">Expertise</p>
-                <h2 class="section-title" data-i18n="skills-title">Minha <span class="highlight-orange">Stack</span>
-                </h2>
-            </div>
-            <div class="skills-grid" id="skillsGrid"></div>
-        </section>
-
-        <section id="projetos" class="container section-padding">
-            <div class="section-header reveal">
-                <p class="subtitle" data-i18n="proj-sub">Portfólio</p>
-                <h2 class="section-title" data-i18n="proj-title">Galeria de <span class="highlight-cyan">Projetos</span>
-                </h2>
-            </div>
-            <div id="projectsGrid" class="projects-grid"></div>
-        </section>
-
-        <section id="contato" class="container section-padding">
-            <div class="contact-wrapper reveal">
-                <div class="contact-info">
-                    <h2 class="section-title" data-i18n="contact-title">Vamos criar algo <span
-                            class="highlight">novo?</span></h2>
-                    <p data-i18n="contact-desc">Jaraguá do Sul, SC | Atendimento remoto.</p>
-                    <div class="contact-list" style="margin-top: 20px;">
-                        <p>
-                            <img src="assets/image/mail.png" height="20px" width="20px"> jeansilvax1697@gmail.com
-                        </p>
-                        <p>
-                            <img src="assets/image/whatsapp.png" height="20px" width="20px"> (92) 98157-8840
-                        </p>
-                    </div>
-                </div>
-                <form id="contactForm" action="contato.php" method="POST" class="contact-form">
-                    <div class="input-group">
-                        <input type="text" name="nome" placeholder="Nome" required data-i18n-placeholder="ph-name">
-                        <input type="email" name="email" placeholder="E-mail" required data-i18n-placeholder="ph-email">
-                    </div>
-                    <textarea name="mensagem" placeholder="Sua mensagem..." rows="5" required
-                        data-i18n-placeholder="ph-msg"></textarea>
-                    <button type="submit" class="btn btn-primary btn-full" data-i18n="btn-send">Enviar Mensagem</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <script src="assets/js/script.js"></script>
-
-    <div id="projectModal" class="project-modal">
-        <div class="modal-content">
-            <button id="closeModal" class="modal-close">✕</button>
-            <div id="modalBody">
-            </div>
-        </div>
-    </div>
-    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
-        <span>↑</span>
-    </button>
-</body>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content reveal">
-            <p class="footer-text">© 2025 <span id="footerName">Jean Torres | Desenvolvedor Front-End</span>. Todos os
-                direitos
-                reservados.</p>
-
-            <div class="social-links reveal" id="socialLinks">
-                <!-- Social links will be inserted here -->
-            </div>
-        </div>
-    </div>
-</footer>
-<div class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" id="closeMenu">✕</button>
-
-    <nav class="mobile-nav-links">
-        <a href="#habilidades" data-i18n="nav-skills"></a>
-        <a href="#projetos" data-i18n="nav-projects"></a>
-        <a href="#contato" data-i18n="nav-contact"></a>
-    </nav>
-
-    <button id="lang-switch-mobile">EN</button>
-
-
-</div>
-<div id="zoomOverlay" style="display:none;" class="image-zoom-overlay" onclick='this.style.display="none"'>
-    <img id="zoomedImage" src="" alt="Zoom">
-</div>
-
-
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
 
 
