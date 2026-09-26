@@ -10,7 +10,7 @@ Portfólio refatorado para **React (Vite)**, mantendo o layout e recursos princi
 
 ## 🔗 Contato
 
-- **Telefone/WhatsApp:** +55 9 9186-4238
+- **Telefone/WhatsApp:** +55 55 99186-4238
 - **Email:** eduardo.augusto.pech97@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/eduardoapech
 - **GitHub:** https://github.com/eduardoapech

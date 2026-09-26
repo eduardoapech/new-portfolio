@@ -11,7 +11,11 @@ export default function Projects({ subtitle, titleHtml, projects, getText, label
         {projects.map((p) => (
           <div className="project-card reveal" key={p.id}>
             <div className="project-img-box">
-              <img src={assetUrl(p.img)} alt={p.title} />
+              <img
+                src={assetUrl(p.img)}
+                alt={p.title}
+                style={{ objectPosition: p.imgPosition || 'center' }}
+              />
             </div>
             <div className="project-info">
               <h3 style={{ color: 'var(--primary)', marginBottom: 10 }}>{p.title}</h3>
@@ -20,11 +24,11 @@ export default function Projects({ subtitle, titleHtml, projects, getText, label
                   color: '#cbd5e1',
                   fontSize: '0.85rem',
                   marginBottom: 20,
-                  maxHeight: 45,
+                  maxHeight: 72,
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                 }}
-                dangerouslySetInnerHTML={{ __html: getText(p.id) }}
+                dangerouslySetInnerHTML={{ __html: getText(p.summaryId || p.id) }}
               />
 
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>

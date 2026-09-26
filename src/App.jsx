@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, useCallback } from 'react';
-import { personal, projects, skills, socialLinks, translations } from './data/siteContent.js';
+import { dailySkills, familiarSkills, personal, projects, socialLinks, translations } from './data/siteContent.js';
 import { t } from './lib/i18n.js';
 import { useRevealObserver } from './hooks/useRevealObserver.js';
 
@@ -39,6 +39,7 @@ export default function App() {
 
       viewDetails: t(translations, lang, 'view-details'),
       viewProject: t(translations, lang, 'view-project'),
+      zoomHint: t(translations, lang, 'zoom-hint'),
 
       btnSend: t(translations, lang, 'btn-send'),
       btnSending: t(translations, lang, 'btn-sending'),
@@ -96,7 +97,10 @@ export default function App() {
         <Skills
           subtitle={t(translations, lang, 'skills-sub')}
           titleHtml={t(translations, lang, 'skills-title')}
-          skills={skills}
+          daily={dailySkills}
+          also={familiarSkills}
+          dailyLabel={t(translations, lang, 'skills-daily')}
+          alsoLabel={t(translations, lang, 'skills-also')}
           getText={(key) => t(translations, lang, key)}
           getLevelText={(key) => t(translations, lang, key)}
         />
@@ -144,6 +148,8 @@ export default function App() {
         project={activeProject}
         descriptionHtml={activeProject ? t(translations, lang, activeProject.id) : ''}
         openProjectLabel={labels.viewProject}
+        zoomHint={labels.zoomHint}
+        getText={(key) => t(translations, lang, key)}
         onClose={() => {
           setActiveProjectId(null);
           setZoomSrc(null);

@@ -8,6 +8,8 @@ export default function ProjectModal({
   onClose,
   onZoom,
   openProjectLabel,
+  zoomHint,
+  getText,
 }) {
   const galleryRef = useRef(null);
   const [showLeft, setShowLeft] = useState(false);
@@ -84,6 +86,8 @@ export default function ProjectModal({
             </div>
           ) : null}
 
+          {zoomHint ? <p className="zoom-hint">{zoomHint}</p> : null}
+
           <div className="gallery-wrapper">
             <button
               className="nav-arrow left"
@@ -95,16 +99,22 @@ export default function ProjectModal({
             </button>
 
             <div className="modal-gallery" id="modalGallery" ref={galleryRef} onScroll={updateArrows}>
-              {images.map((img) => (
-                <img
-                  key={`${project.id}-${img}`}
-                  src={assetUrl(img)}
-                  alt="Screenshot"
-                  onClick={() => {
-                    if (window.innerWidth <= 768) onZoom(img);
-                  }}
-                />
-              ))}
+              {images.map((item) => {
+                const src = typeof item === 'string' ? item : item.src;
+                const caption =
+                  typeof item === 'string' || !item.captionKey || !getText ? '' : getText(item.captionKey);
+
+                return (
+                  <figure className="modal-slide" key={`${project.id}-${src}`}>
+                    <img
+                      src={assetUrl(src)}
+                      alt={caption || project.title}
+                      onClick={() => onZoom(src)}
+                    />
+                    {caption ? <figcaption>{caption}</figcaption> : null}
+                  </figure>
+                );
+              })}
             </div>
 
             <button
