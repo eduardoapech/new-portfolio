@@ -244,44 +244,131 @@ body {
 }
 
 /* 10. HABILIDADES (SKILLS) */
+.skills-board {
+  border: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 28px;
+  padding: 28px;
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .skill-card {
-  background: var(--card-bg);
+  background: rgba(2, 6, 23, 0.35);
   border: 1px solid var(--border-light);
-  padding: 35px;
-  border-radius: 20px;
+  padding: 22px 20px;
+  border-radius: 18px;
   transition: 0.4s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-card:hover {
   border-color: var(--primary);
-  background: rgba(128, 255, 249, 0.02);
+  background: rgba(128, 255, 249, 0.04);
+}
+
+.skill-card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .skill-badge {
-  font-size: 0.65rem;
+  flex-shrink: 0;
+  font-size: 0.62rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.08em;
   color: var(--primary);
   border: 1px solid var(--primary-dim);
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
   font-weight: 800;
 }
 
 .skill-card h3 {
-  margin: 20px 0 10px 0;
-  font-size: 1.4rem;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
 }
 
 .skill-card p {
   color: var(--text-dim);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  margin-top: auto;
+}
+
+.skills-label {
+  margin: 0 0 14px;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.skills-also {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.skills-also .skills-label {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.skill-pill {
+  border: 1px solid var(--border-light);
+  background: rgba(2, 6, 23, 0.35);
+  border-radius: 999px;
+  padding: 8px 16px;
+  color: #e2e8f0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-also {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skill-pills {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .skills-board {
+    padding: 18px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* 11. PROJETOS */
@@ -552,15 +639,89 @@ textarea {
   display: none; /* Chrome/Safari */
 }
 
-.modal-gallery img {
-  min-width: 100%;
+.modal-slide {
+  flex: 0 0 100%;
   width: 100%;
-  height: 420px;
   scroll-snap-align: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-gallery img {
+  width: auto;
+  max-width: 100%;
+  height: min(58vh, 520px);
   object-fit: contain;
-  padding: 0 5px;
-  box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: 16px;
+  cursor: zoom-in;
+  background: #05070f;
+}
+
+.modal-slide figcaption {
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+}
+
+.zoom-hint {
+  margin: 0 0 12px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.project-points {
+  margin: 14px 0 8px;
+  padding-left: 18px;
+  color: #cbd5e1;
+}
+
+.project-points li {
+  margin-bottom: 6px;
+}
+
+.project-how {
+  margin-top: 8px;
+}
+
+.image-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: auto;
+  padding: 64px 16px 40px;
+  cursor: zoom-out;
+}
+
+.image-zoom-overlay img {
+  height: min(155vh, 1600px);
+  width: auto;
+  max-width: 96vw;
+  border-radius: 12px;
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.55);
+  cursor: default;
+}
+
+.zoom-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10000;
 }
 
 /* 18. SETAS DE NAVEGAÇÃO */
@@ -603,30 +764,8 @@ textarea {
 }
 
 @media (max-width: 768px) {
-  .image-zoom-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    cursor: zoom-out;
-  }
-
-  .image-zoom-overlay img {
-    max-width: 95%;
-    max-height: 95%;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  }
-
   .modal-gallery img {
-    cursor: zoom-in;
-    height: 260px;
+    height: 280px;
   }
 }
 
