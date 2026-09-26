@@ -37,11 +37,11 @@ export default function Projects({ subtitle, titleHtml, projects, getText, label
                     key={t}
                     style={{
                       fontSize: '0.65rem',
-                      background: 'rgba(128,255,249,0.1)',
+                      background: 'rgba(225,6,19,0.12)',
                       color: 'var(--primary)',
                       padding: '4px 10px',
                       borderRadius: 6,
-                      border: '1px solid rgba(128,255,249,0.2)',
+                      border: '1px solid rgba(225,6,19,0.35)',
                     }}
                   >
                     {t}
