@@ -1,7 +1,7 @@
 /* 1. CONFIGURAÇÕES GERAIS E CORES */
 :root {
-  --primary: #80fff9; /* Ciano sutil */
-  --primary-dim: rgba(128, 255, 249, 0.15);
+  --primary: #e10613; /* Vermelho da camisa da Espanha */
+  --primary-dim: rgba(225, 6, 19, 0.28);
   --bg-dark: #020611; /* Azul marinho profundo */
   --card-bg: rgba(255, 255, 255, 0.02);
   --border-light: rgba(255, 255, 255, 0.08);
@@ -21,7 +21,7 @@ html {
 
 body {
   font-family: var(--font-main);
-  background: linear-gradient(120deg, #020617, #050b2c, #0b3b4a, #020617);
+  background: linear-gradient(120deg, #020617, #1a0610, #4a0c14, #020617);
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
@@ -146,8 +146,8 @@ body {
 
 /* 7. BOTÃO CONTRATAR */
 .nav-cta {
-  background: #ffffff !important;
-  color: #000000 !important;
+  background: var(--primary) !important;
+  color: #ffffff !important;
   padding: 8px 20px;
   border-radius: 50px;
   font-weight: 800;
@@ -159,7 +159,7 @@ body {
 
 .nav-cta:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(225, 6, 19, 0.45);
 }
 
 /* ============================================================
@@ -183,12 +183,12 @@ body {
 
 .btn-primary {
   background: var(--primary);
-  color: #000;
+  color: #fff;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(128, 255, 249, 0.2);
+  box-shadow: 0 10px 20px rgba(225, 6, 19, 0.2);
 }
 
 .btn-secondary {
@@ -270,7 +270,7 @@ body {
 
 .skill-card:hover {
   border-color: var(--primary);
-  background: rgba(128, 255, 249, 0.04);
+  background: rgba(225, 6, 19, 0.04);
 }
 
 .skill-card-top {
@@ -729,7 +729,7 @@ textarea {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(128, 255, 249, 0.2);
+  background: rgba(225, 6, 19, 0.2);
   border: 1px solid var(--primary);
   color: white;
   width: 40px;
@@ -776,20 +776,20 @@ textarea {
   width: 45px;
   height: 45px;
   background-color: var(--primary);
-  color: #000;
+  color: #fff;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   display: none;
   z-index: 1000;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(128, 255, 249, 0.3);
+  box-shadow: 0 4px 15px rgba(225, 6, 19, 0.3);
   font-size: 1.2rem;
 }
 
 .back-to-top:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(128, 255, 249, 0.5);
+  box-shadow: 0 6px 20px rgba(225, 6, 19, 0.5);
 }
 
 body.modal-open .back-to-top {
@@ -842,7 +842,7 @@ body.modal-open .back-to-top {
   letter-spacing: 1px;
   color: var(--primary);
   border: 1px solid var(--primary-dim);
-  background: rgba(128, 255, 249, 0.05);
+  background: rgba(225, 6, 19, 0.05);
   padding: 8px 14px;
   border-radius: 999px;
   margin-bottom: 18px;
